@@ -1,38 +1,296 @@
-.App {
-  text-align: center;
+/***** Variables *****/
+:root {
+  --bg-dark: rgb(37, 41, 46);
+  --bg-dark-light: rgb(48, 54, 61);
+  --bg-dark-lightest: rgb(69, 77, 86);
+  --bg-dark-secondary: rgb(30, 33, 37);
+  --font-primary: rgb(210, 213, 218);
+  --font-secondary: rgb(149, 156, 164);
+  --red: rgb(243, 107, 91);
+  --orange: rgb(247, 192, 66);
+  --blue: rgb(36, 97, 210);
+  --green: rgb(71, 166, 76);
+  --border: rgb(26, 25, 25);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/***** Zero Defaults *****/
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--font-primary);
+  font-size: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/***** Main Window *****/
+.window {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+}
+
+/***** Mac Buttons *****/
+.window-top-bar {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100vw;
+  height: 22px;
+  border-top: 1px solid rgb(111, 114, 118);
+  border-bottom: 1px solid black;
+  background: rgb(58, 62, 68);
+  background: linear-gradient(180deg, rgba(58, 62, 68, 1) 0%, rgba(45, 47, 52, 1) 100%);
+}
+
+.window-top-bar .buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60px;
+}
+
+.window-top-bar .buttons-container .circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close {
+  background-color: var(--red);
+}
+
+.minimize {
+  background-color: var(--orange);
+}
+
+.zoom {
+  background-color: var(--green);
+}
+
+/***** Menu Bar *****/
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-dark-secondary);
+}
+
+.menu-bar-item {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  height: 100%;
+  padding: 0 8px;
+  width: 260px;
+}
+
+.menu-bar-item-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 12px;
+}
+
+.menu-bar-item-text small {
+  color: var(--font-secondary);
+}
+
+/***** Info Bar *****/
+.info-bar {
+  display: flex;
+  flex-direction: row;
+  /* padding: 8px; */
+}
+
+/***** Side Bar *****/
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 277px;
+  border-right: 1px solid var(--border);
+  height: 93vh;
+}
+
+.side-bar-titles {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--border);
+}
+
+.changes,
+.history {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 15px;
+  padding: 8px;
+}
+
+.changes {
+  border-bottom: 4px solid var(--blue);
+  border-right: 1px solid var(--border);
+  margin-top: -4px;
+}
+
+.pill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  width: 18px;
+  background-color: var(--bg-dark-lightest);
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.pill-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  width: 40px;
+  border-radius: 6px;
+  margin-left: 8px;
+  border: 1px solid var(--green);
+  font-weight: 800;
+  font-size: 10px;
+}
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 15px;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-dark-light);
+}
+
+.file span {
+  color: var(--font-secondary);
+  margin-left: 4px;
+}
+
+.file-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pill-orange {
+  display: flex;
+  border: 1px solid var(--orange);
+  height: 15px;
+  width: 15px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+.file-changed {
+  display: flex;
+  padding: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--bg-dark-light);
+  border-bottom: 1px solid var(--border);
+}
+
+.file-changed-text {
+  margin-left: 70px;
+}
+
+.file-changed-description {
+  display: flex;
+  padding: 8px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-dark-lightest);
+  border-bottom: 1px solid var(--border);
+}
+
+.text {
+  margin-left: -100px;
+  font-size: 14px;
+}
+
+/* Submit section of side bar */
+.submit-section {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg-dark-light);
+  padding-bottom: 8px;
+  margin-bottom: -6px;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+  align-items: center;
+  background-color: var(--bg-dark-light);
+  height: 50px;
+}
+
+.profile-image {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.update-title {
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-dark-secondary);
+  padding: 8px;
+  margin-left: 8px;
+  margin-right: 4px;
+  width: 300px;
+}
+
+.update-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  background-color: var(--bg-dark-secondary);
+  border-radius: 8px;
+  height: 150px;
+  width: 240px;
+  padding: 8px;
+  color: var(--font-secondary);
+  margin: 8px;
+}
+
+.primary-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  margin-left: 8px;
+  background-color: var(--blue);
+  width: 93%;
+  border-radius: 6px;
+  padding: 8px;
+  border: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.primary-button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 120, 255);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.primary-button span {
+  font-weight: 800;
+  margin-left: 4px;
+  color: white;
 }

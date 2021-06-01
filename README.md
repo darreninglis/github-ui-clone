@@ -17,6 +17,7 @@ Showcasing my ability to quickly build UI/UX experiences in the browser.
 
 - Interactive, you can look to some of my other repositories if you would like to see how I consume API's etc.
 - Mobile responsive (by design).
+- Pixel perfect, but not bad for a few hours work!
 
 ## Notes
 

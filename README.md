@@ -4,15 +4,20 @@ I built this as a portfolio item to show off my User Interface building skills u
 
 Live demo can be viewed [here](https://github-desktop-ui-clone.netlify.app/)
 
-## Tech:
+## Stack:
 
 Create React App
 React Icons
 
-## Showcasing:
+## What this is:
 
-My ability to quickly build UI/UX experiences in the browser.
+Showcasing my ability to quickly build UI/UX experiences in the browser.
+
+## What this isn't:
+
+- Interactive, you can look to some of my other repositories if you would like to see how I consume API's etc.
+- Mobile responsive (by design).
 
 ## Notes
 
-This is a non interactive example, I'm going to build out a few more UI interfaces for my portfolio and then come back and add interactive features as needed.
+I mean, just look at that gradient on the Mac menu bar window... ❤️

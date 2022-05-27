@@ -1,9 +1,4 @@
-/* TODO:
-*
-*
-*/
-
-import { GoLock, GoGitBranch, GoSync, GoChevronDown } from 'react-icons/go'
+import { GoLock, GoGitBranch, GoSync, GoChevronDown } from 'react-icons/go';
 
 const MenuBar = () => {
   return (

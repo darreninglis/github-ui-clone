@@ -1,8 +1,3 @@
-/* TODO
-*
-*
-*/
-
 import { GoGear, GoChevronDown, GoDiffModified } from 'react-icons/go'
 import { BsPersonPlus } from 'react-icons/bs'
 
@@ -29,7 +24,7 @@ const InfoBar = () => {
           </div>
           <div className="file-changed-description">
             <input type="checkbox" checked="checked" readOnly />
-            <div className="text">notes/journal.md</div>
+            <div className="text">project/README.md</div>
             <GoDiffModified />
           </div>
         </div>

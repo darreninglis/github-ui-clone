@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 /***** Variables *****/
 :root {
   --bg-dark: rgb(37, 41, 46);
@@ -107,7 +121,6 @@
 .info-bar {
   display: flex;
   flex-direction: row;
-  /* padding: 8px; */
 }
 
 /***** Side Bar *****/
@@ -224,20 +237,19 @@
 /* Submit section of side bar */
 .submit-section {
   display: flex;
+  padding-bottom: 8px;
   flex-direction: column;
   border-top: 1px solid var(--border);
   background-color: var(--bg-dark-light);
-  padding-bottom: 8px;
-  margin-bottom: -6px;
 }
 
 .profile-section {
+  height: 50px;
   display: flex;
-  flex-direction: row;
   padding: 0 8px;
+  flex-direction: row;
   align-items: center;
   background-color: var(--bg-dark-light);
-  height: 50px;
 }
 
 .profile-image {

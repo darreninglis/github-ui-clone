@@ -1,12 +1,7 @@
-/* TODO general:
-* Check font
-* Level of interaction on hover & click
-*/
-
 import './App.css';
-import MacButtons from './components/MacButtons';
-import MenuBar from './components/MenuBar';
 import InfoBar from './components/InfoBar';
+import MenuBar from './components/MenuBar';
+import MacButtons from './components/MacButtons';
 
 function App () {
   return (
@@ -16,7 +11,6 @@ function App () {
       <InfoBar />
     </div>
   );
-
 }
 
 export default App;

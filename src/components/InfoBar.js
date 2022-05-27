@@ -9,11 +9,11 @@ const InfoBar = () => {
       <div className="side-bar">
         <div>
           <div className="side-bar-titles">
-            <div className="changes">
+            <div className="changes hover">
               Changes
             <div className="pill"><small>1</small></div>
             </div>
-            <div className="history">
+            <div className="history hover">
               History
           <div className="pill-new">New</div>
             </div>
@@ -44,10 +44,10 @@ const InfoBar = () => {
 
       {/* Page Section */ }
       <div className="file">
-        <div><span>notes/</span>journal.md</div>
-        <div className="file-end">
+        <div><span>project/</span>README.md</div>
+        <div className="file-end hover">
           <div><GoGear /> <GoChevronDown /></div>
-          <div className="pill-new">New</div>
+          <div className="pill-new hover">New</div>
           <GoDiffModified style={ { marginLeft: '8px' } } />
         </div>
       </div>

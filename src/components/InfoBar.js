@@ -51,7 +51,6 @@ const InfoBar = () => {
           <GoDiffModified style={ { marginLeft: '8px' } } />
         </div>
       </div>
-
     </div>
   );
 }
